@@ -1,0 +1,2 @@
+# City-Weather-Dashboard
+This assignment is purposed at helping travelers search for the weather in different cities including current and future conditions. When presented with current weather conditions, the traveler is presented with UV index, wind speed, humidity, temperature along with an icon displaying the conditions, the date and the city. This information is called from an API and the program uses local storage to show past searches.
