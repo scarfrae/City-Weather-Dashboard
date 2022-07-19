@@ -19,7 +19,7 @@
     <!--allows info to be fully flush with sides (bootstrap)-->
     <main class="container-fluid">
         <div class="row">
-            <section class="col-6">
+            <section class="col-4">
                 <div class="card custom-card">
                   <h3 class="card-header">
                     Search For City
@@ -27,19 +27,31 @@
                   <div class="card-body">
                     <input 
                         type="form"
-                        class="form-control"
-                        id="Citysearch"
+                        class="form-control citySearch"
+                        id="citySearch"
                         placeholder="Seattle"
                     />
                     <button 
                         type="button" 
-                        class="btn btn-primary btn-sm btn-block">
+                        class="button btn btn-primary btn-sm btn-block">
                         Submit
                     </button>
-                  </div>
+                </div>
                  
-              </section>
+            </section>
+            <!--where city info is going to be-->
+            <section class="col-8">
+                <div class="card displayCityInfo">
+                    <div class="card-body"></div>
+                        <h1 class="card-title name"></h1>
+                        <p class="temperature">Temp: </p>
+                        <p class="wind">Wind: </p>
+                        <p class="humidity">Humidity: </p>
+                        <p class="UV-Index">UV Index: </p>
+                </div>
+            </section>
         </div>
+
     </main>
     
     <!--Bootstrap file-->
