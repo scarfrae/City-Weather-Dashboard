@@ -1,17 +1,63 @@
-//web api link
-
 //global query selectors
 //button link to html
-var button = document.querySelector('button');
+var submitCityButton = document.querySelector('.submitCityButton');
+
 //input link to html
-var cityInput = document.querySelector('citySearch');
+var cityInput = document.querySelector('.citySearch');
 //city header link to html
-var cityName = document.querySelector('name');
+var cityName = document.querySelector('.name');
 //city temp link to html
-var cityTemp = document.querySelector('temperature');
+var cityTemp = document.querySelector('.temperature');
 //city wind link to html
-var cityWind = document.querySelector('wind');
+var cityWind = document.querySelector('.wind');
 //city humidity link to html
-var cityHumidity = document.querySelector('humidity');
+var cityHumidity = document.querySelector('.humidity');
 //city UV-Index link to html
-var cityUVIndex = document.querySelector('UV-Index');
+var cityUVIndex = document.querySelector('.UV-Index');
+
+
+
+//city name api link
+//function to make link dynamic
+ submitCityButton.addEventListener('click', function() {
+    var cityName = cityInput.value;
+    console.log(cityInput.value);
+    getCityName(cityName);
+
+
+})
+var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + latitude + '&lon=' + longitude + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+
+//fetch Latitude and Longitude 
+function getLandLLocation() {
+
+    fetch(locationLink, latLongLocation)
+    .then(response => response.json())
+    .then(response => renderLocation(response))
+    .catch(err => console.error(err));
+
+}
+//city api link
+//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=6b089db5e12bcc8e35e3e9236791aef9
+
+
+var apiKey = "6b089db5e12bcc8e35e3e9236791aef9";
+
+//reference
+function getCityName(cityName) {
+    var cityCall = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName +  '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+    console.log(cityCall);
+    fetch(cityCall)
+    // .then(response => console.log(response))
+      .then(response => response.json())
+    //   .then(response => console.log(response))
+      .then(response => renderCityInfo(response))
+      .catch(err => console.error(err));
+  
+  }
+
+//Render city info
+function renderCityInfo(response){
+    //access elements within respnse.json 
+    // print elements into html section card
+}
