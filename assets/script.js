@@ -26,14 +26,18 @@ var cityUVIndex = document.querySelector('.UV-Index');
 
 
 })
-var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + latitude + '&lon=' + longitude + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+//var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + latitude + '&lon=' + longitude + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
 
 //fetch Latitude and Longitude 
-function getLandLLocation() {
-
-    fetch(locationLink, latLongLocation)
+function getLandLLocation(lat, long) {
+  var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon=' + long + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+    fetch(locationLink)
     .then(response => response.json())
-    .then(response => renderLocation(response))
+    .then(function (data) {
+      console.log(data)
+      //taken values from json
+      
+    })
     .catch(err => console.error(err));
 
 }
@@ -51,7 +55,14 @@ function getCityName(cityName) {
     // .then(response => console.log(response))
       .then(response => response.json())
     //   .then(response => console.log(response))
-      .then(response => renderCityInfo(response))
+      .then(function (data) {
+        console.log(data)
+        //taken values from json
+        var lat = data.coord.lat;
+        var long = data.coord.lon;
+        getLandLLocation(lat, long)
+      })
+    //.then(response => renderCityInfo(response)
       .catch(err => console.error(err));
   
   }
