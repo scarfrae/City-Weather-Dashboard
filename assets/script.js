@@ -26,11 +26,11 @@ var cityUVIndex = document.querySelector('.UV-Index');
 
 
 })
-//var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + latitude + '&lon=' + longitude + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+//var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon=' + long + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
 
 //fetch Latitude and Longitude 
 function getLandLLocation(lat, long) {
-  var locationLink = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon=' + long + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
+  var locationLink = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + long + '&appid=6b089db5e12bcc8e35e3e9236791aef9'
     fetch(locationLink)
     .then(response => response.json())
     .then(function (data) {
