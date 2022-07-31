@@ -36,7 +36,34 @@ function getLandLLocation(lat, long) {
     .then(function (data) {
       console.log(data)
       //taken values from json
+
+      //get temp value from api for today
+      var tempNum = data.current.temp;
+      //Get change temp from kelvin to far.
+
+      //Need to add the degrees F symbol
+      var tempFar = ((tempNum - 273.15)*9/5 + 32).toFixed(2) + ' ºF';
+      cityTemp.textContent += tempFar;
+      console.log(cityTemp);
+
+      //get wind speed value from api
+      var windNum = data.current.wind_speed + ' MPH';
+      cityWind.textContent += windNum;
+      console.log(cityWind);
       
+      //get humidity value from api
+      var humidityNum = data.current.humidity + ' %';
+      cityHumidity.textContent += humidityNum;
+      console.log(cityHumidity);
+
+      //get UV Index value from api 
+      var UVIndexNum = data.current.uvi;
+      cityUVIndex.textContent += UVIndexNum;
+      console.log(cityUVIndex);
+
+      
+
+
     })
     .catch(err => console.error(err));
 
