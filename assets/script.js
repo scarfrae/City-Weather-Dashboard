@@ -14,6 +14,7 @@ var cityWind = document.querySelector('.wind');
 var cityHumidity = document.querySelector('.humidity');
 //city UV-Index link to html
 var cityUVIndex = document.querySelector('.UV-Index');
+var UVColor = document.querySelector('.UV-Color');
 
 
 
@@ -60,8 +61,34 @@ function getLandLLocation(lat, long) {
       var UVIndexNum = data.current.uvi;
       cityUVIndex.textContent += UVIndexNum;
       console.log(cityUVIndex);
+      // DONT KNOW IF UV VALUES PART IS CORRECT. NUMS HAVE SPACES BETWEEN 5 and 6 etc.
+      //if statements to set text background to color based on UV num.
+      if(UVIndexNum < 2) {
+        cityUVIndex.classList.add("lowUV")
+        console.log(cityUVIndex);
+        // UVIndexNum.setAttribute("style", "background-color: green;")
 
-      
+      }
+      else if(3 < UVIndexNum < 5) {
+        cityUVIndex.classList.add("moderateUV ")
+        console.log(cityUVIndex);
+        // UVIndexNum.setAttribute("style", "background-color: green;")
+
+      }
+      else if(6 < UVIndexNum < 7) {
+        cityUVIndex.classList.add("highUV ")
+        console.log(cityUVIndex);
+        // UVIndexNum.setAttribute("style", "background-color: green;")
+
+      }
+      else if(8 < UVIndexNum < 10) {
+        cityUVIndex.classList.add("veryHighUV")
+        console.log(cityUVIndex);
+        // UVIndexNum.setAttribute("style", "background-color: green;")
+
+      }
+
+
 
 
     })

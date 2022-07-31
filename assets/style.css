@@ -1,3 +1,24 @@
-.header{
+.header {
     background: blue;
+}
+
+/* UV index color codes */
+.lowUV {
+    background-color: green;
+    color: white;
+}
+
+.moderateUV {
+    background-color: yellow;
+    color: white;
+}
+
+.highUV {
+    background-color: orange;
+    color: white;
+}
+
+.veryHighUV {
+    background-color: red;
+    color: white;
 }
