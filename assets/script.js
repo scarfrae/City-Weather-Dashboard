@@ -63,33 +63,30 @@ function getLandLLocation(lat, long) {
       console.log(cityUVIndex);
       // DONT KNOW IF UV VALUES PART IS CORRECT. NUMS HAVE SPACES BETWEEN 5 and 6 etc.
       //if statements to set text background to color based on UV num.
-      if(UVIndexNum < 2) {
+      if(UVIndexNum <= 2) {
         cityUVIndex.classList.add("lowUV")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
-      else if(3 < UVIndexNum < 5) {
+      else if(3 <= UVIndexNum < 5) {
         cityUVIndex.classList.add("moderateUV ")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
-      else if(6 < UVIndexNum < 7) {
+      else if(6 <= UVIndexNum < 7) {
         cityUVIndex.classList.add("highUV ")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
-      else if(8 < UVIndexNum < 10) {
+      else if(8 <= UVIndexNum < 10) {
         cityUVIndex.classList.add("veryHighUV")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
-
-
-
 
     })
     .catch(err => console.error(err));
