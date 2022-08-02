@@ -1,24 +1,42 @@
 .header {
     background: blue;
 }
+/*indentation of temp, wind, humidity, UV index values */
+#p0 {
+    text-indent: 0.5em;
+}
+#p1 {
+    text-indent: 0.5em;
+}
+#p2 {
+    text-indent: 0.5em;
+}
+#p3 {
+    text-indent: 0.5em;
+}
+
+/* cityName */
+.name {
+    text-indent: 0.125em;
+}
 
 /* UV index color codes */
 .lowUV {
     background-color: green;
-    color: white;
+    color: black;
 }
 
 .moderateUV {
     background-color: yellow;
-    color: white;
+    color: black;
 }
 
 .highUV {
     background-color: orange;
-    color: white;
+    color: black;
 }
 
 .veryHighUV {
     background-color: red;
-    color: white;
+    color: black;
 }

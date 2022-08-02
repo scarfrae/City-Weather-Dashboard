@@ -1,11 +1,12 @@
 //global query selectors
 //button link to html
 var submitCityButton = document.querySelector('.submitCityButton');
+//city name
 
 //input link to html
 var cityInput = document.querySelector('.citySearch');
 //city header link to html
-var cityName = document.querySelector('.name');
+var cityNameValue = document.querySelector('.name');
 //city temp link to html
 var cityTemp = document.querySelector('.temperature');
 //city wind link to html
@@ -37,6 +38,7 @@ function getLandLLocation(lat, long) {
     .then(function (data) {
       console.log(data)
       //taken values from json
+      
 
       //get temp value from api for today
       var tempNum = data.current.temp;
@@ -70,13 +72,13 @@ function getLandLLocation(lat, long) {
 
       }
       else if(3 <= UVIndexNum < 5) {
-        cityUVIndex.classList.add("moderateUV ")
+        cityUVIndex.classList.add("moderateUV")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
       else if(6 <= UVIndexNum < 7) {
-        cityUVIndex.classList.add("highUV ")
+        cityUVIndex.classList.add("highUV")
         console.log(cityUVIndex);
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
@@ -87,6 +89,7 @@ function getLandLLocation(lat, long) {
         // UVIndexNum.setAttribute("style", "background-color: green;")
 
       }
+      
 
     })
     .catch(err => console.error(err));
@@ -108,6 +111,10 @@ function getCityName(cityName) {
     //   .then(response => console.log(response))
       .then(function (data) {
         console.log(data)
+        //cityName 
+        var cityVal = data.name + '';
+        cityNameValue.textContent += cityVal;
+        console.log(cityVal);
         //taken values from json
         var lat = data.coord.lat;
         var long = data.coord.lon;
