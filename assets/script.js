@@ -126,7 +126,13 @@ function getCityName(cityName) {
   }
 
 //Render city info
-function renderCityInfo(response){
+function renderCityInfo(data){
     //access elements within respnse.json 
-    // print elements into html section card
+    // print elements into card
+    console.log(data);
+
+    var dayWeatherCard = 
+    `
+    
+    `
 }

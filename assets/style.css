@@ -18,6 +18,7 @@
 /* cityName */
 .name {
     text-indent: 0.125em;
+    font-size: xx-large;
 }
 
 /* UV index color codes */
