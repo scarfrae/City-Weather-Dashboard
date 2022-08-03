@@ -19,7 +19,7 @@
     <!--allows info to be fully flush with sides (bootstrap)-->
     <main class="container-fluid">
         <div class="row">
-            <section class="col-4">
+            <section class="col-md-4">
                 <div class="card custom-card">
                   <h2 class="card-header">
                     Search For City
@@ -40,7 +40,7 @@
                  
             </section>
             <!--where city info is going to be-->
-            <section class="col-8">
+            <section class="col-md-8">
                 <div class="card displayCityInfo">
                     <div class="card-body">
                         <h1 class="card-title name"></h1>
@@ -50,6 +50,8 @@
                         <p id="p3">UV Index: <span class="UV-Index"></span></p>
                     </div>
                 </div>
+            </section>
+            <section id="forcastScreen" class="col-lg-2 float-md-right col-md-8 col-sm-12">
                 <div class="card displayDailyForcast">
                     <div class="card-body">
                         <h1 class="card-title day"></h1>
@@ -98,7 +100,6 @@
                         <p id="p2" class="humidity">Humidity: </p>
                         <p id="p3">UV Index: <span class="UV-Index"></span></p>
                     </div>
-                    
                 </div>
             </section>
         </div>
