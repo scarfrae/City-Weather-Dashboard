@@ -354,14 +354,30 @@ function getLandLLocation(lat, long) {
 
 }
 
-//function to make locally stored city info into buttons
-function getcityButton(cityInfo){
+var cityStorage = document.querySelector('.localStorage');
 
-  for(var i=0; i <=cityInfo.length; i++) {
-    
-    console.log(cityInfo[i]);
+//function to render buttons
+function getcityButton(){
+  //define element to append ul
+  var cityInfo = JSON.parse(localStorage.getItem('cities'));
+  //create list el.
+  console.log(cityInfo);
 
+  var ul = document.createElement("ul");
+  if(cityInfo === null){
+    console.log("hi");
   }
+  else{
+    for(var i=0; i <=cityInfo.length; i++) {
+      //iterate through city data
+      console.log(cityInfo[i]);
+      var li = document.createElement("li");
+      //create button and add to inner html of li
+      li.innerHTML = "<button type='button'>" + cityInfo[i] + "</button>";
+      ul.append(li);
+    }
+  }
+  cityStorage.append(ul);
 // var citybtn = document.createElement("button");
 
 }
@@ -371,7 +387,7 @@ function getcityButton(cityInfo){
 
 
 var apiKey = "6b089db5e12bcc8e35e3e9236791aef9";
-cities = [];
+cities =  JSON.parse(localStorage.getItem('cities')) || [];
 //reference
 function getCityName(cityName) {
     var cityCall = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName +  '&appid=6b089db5e12bcc8e35e3e9236791aef9'
@@ -389,12 +405,6 @@ function getCityName(cityName) {
 
         cities.push(cityVal)
         localStorage.setItem('cities', JSON.stringify(cities))
-        //returns array
-        var cityInfo = JSON.parse(localStorage.getItem('cities'));
-        console.log(cityInfo);
-
-        
-        getcityButton(cityInfo);
 
         var date = " " + new Date().toLocaleDateString()
         cityNameValue.textContent += date;
@@ -410,3 +420,11 @@ function getCityName(cityName) {
   }
 
 
+  getcityButton();
+
+  cityStorage.addEventListener("click", function (event){
+    var newCity = event.target.textContent
+    console.log(event.target.textContent);
+    getCityName(newCity);
+  }
+  )
