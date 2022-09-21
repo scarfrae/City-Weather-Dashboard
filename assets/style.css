@@ -42,9 +42,7 @@
     color: black;
 }
 
-@media (min-width: 730px) { /*need to change min-width and have max width"*/
-    #forcastScreen {
-        color: blue;
-        
-    }
+.displayDailyForcast {
+    background-color: darkblue;
+    color: whitesmoke    
 }
