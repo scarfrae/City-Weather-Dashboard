@@ -89,7 +89,6 @@ var dayFiveUVColor = document.querySelector('.UV-Color_5');
 //function to make link dynamic
  submitCityButton.addEventListener('click', function() {
     var cityName = cityInput.value;
-    // console.log(cityInput.value);
     getCityName(cityName);
 
 
@@ -370,8 +369,9 @@ function getcityButton(){
   else{
     for(var i=0; i <=cityInfo.length; i++) {
       //iterate through city data
-      console.log(cityInfo[i]);
+      console.log("Previously Searched button", cityInfo[i]);
       var li = document.createElement("li");
+      // li.addEventListener("click", )
       //create button and add to inner html of li
       li.innerHTML = "<button type='button'>" + cityInfo[i] + "</button>";
       ul.append(li);
@@ -382,8 +382,7 @@ function getcityButton(){
 
 }
 
-//city api link
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=6b089db5e12bcc8e35e3e9236791aef9
+
 
 
 var apiKey = "6b089db5e12bcc8e35e3e9236791aef9";
@@ -424,7 +423,7 @@ function getCityName(cityName) {
 
   cityStorage.addEventListener("click", function (event){
     var newCity = event.target.textContent
-    console.log(event.target.textContent);
+    console.log("cityStorage", event.target.textContent);
     getCityName(newCity);
   }
   )
