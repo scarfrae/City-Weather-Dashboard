@@ -379,7 +379,13 @@ function getcityButton(){
   }
   cityStorage.append(ul);
 // var citybtn = document.createElement("button");
+  cityStorage.addEventListener("click", function (event){
+    var newCity = event.target.textContent
+    console.log("cityStorage", newCity);
+    getCityName(newCity);
+  }
 
+  )
 }
 
 
@@ -420,10 +426,3 @@ function getCityName(cityName) {
 
 
   getcityButton();
-
-  cityStorage.addEventListener("click", function (event){
-    var newCity = event.target.textContent
-    console.log("cityStorage", event.target.textContent);
-    getCityName(newCity);
-  }
-  )
