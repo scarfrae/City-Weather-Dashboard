@@ -1,4 +1,3 @@
-//global query selectors
 //button link to html
 var submitCityButton = document.querySelector('.submitCityButton');
 //city name
@@ -367,7 +366,7 @@ function getcityButton(){
     console.log("hi");
   }
   else{
-    for(var i=0; i <=cityInfo.length; i++) {
+    for(var i = cityInfo.length - 1; i >= 0; i--) {
       //iterate through city data
       console.log("Previously Searched button", cityInfo[i]);
       var li = document.createElement("li");
